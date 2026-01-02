@@ -94,7 +94,8 @@ unsafe extern "system" fn keyboard_proc(
     
     // APP_DATA 가져오기
     let app_state = unsafe {
-        match APP_DATA.as_ref() {
+        let ptr = std::ptr::addr_of!(APP_DATA);
+        match (*ptr).as_ref() {
             Some(state) => state,
             None => return CallNextHookEx(None, code, wparam, lparam),
         }

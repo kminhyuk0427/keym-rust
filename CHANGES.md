@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.8
+
+* APP_DATA.as_ref가 여전히 mutable static을 참조하는 문제를 해결하였습니다.
+
 ## 1.1.7
 
 * build_ui 메서드를 사용하기 위해 trait를 추가했습니다.

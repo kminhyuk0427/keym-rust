@@ -72,7 +72,7 @@ fn main() {
         }
         
         // 정리
-        UnhookWindowsHookEx(HOOK);
+        let _ = UnhookWindowsHookEx(HOOK);
     }
 }
 
@@ -93,9 +93,11 @@ unsafe extern "system" fn keyboard_proc(
     }
     
     // APP_DATA 가져오기
-    let app_state = match &APP_DATA {
-        Some(state) => state,
-        None => return CallNextHookEx(None, code, wparam, lparam),
+    let app_state = unsafe {
+        match APP_DATA.as_ref() {
+            Some(state) => state,
+            None => return CallNextHookEx(None, code, wparam, lparam),
+        }
     };
     
     // 스캔코드를 키 이름으로 변환

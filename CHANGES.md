@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.7
+
+* build_ui 메서드를 사용하기 위해 trait를 추가했습니다.
+* static mut를 직접 참조하도록 변경하였습니다.
+* GUI 창과 매크로 등록, 수정, 삭제 그리고 동작 테스트를 거쳤습니다.
+
 ## 1.1.4(빌드 안됨)
 
 * Editor를 GUI로 구현하기 위해 루트 Cargo와 editor/Cargo에 의존성을 추가하였습니다.

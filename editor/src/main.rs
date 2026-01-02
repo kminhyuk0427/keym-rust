@@ -2,6 +2,7 @@ use shared::{AppMutex, MacroConfig, Macro, MacroAction};
 use native_windows_gui as nwg;
 use native_windows_derive as nwd;
 use nwd::NwgUi;
+use nwg::NativeUi;
 use std::cell::RefCell;
 
 #[derive(Default, NwgUi)]

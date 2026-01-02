@@ -1,4 +1,4 @@
-use windows::Win32::Foundation::{CloseHandle, HANDLE, WIN32_ERROR};
+use windows::Win32::Foundation::{CloseHandle, HANDLE};
 use windows::Win32::System::Threading::{CreateMutexW, ReleaseMutex};
 use windows::core::PCWSTR;
 
@@ -25,7 +25,6 @@ impl AppMutex {
             ).ok()?;
             
             // GetLastError 확인
-            // Err인 경우에만 에러 코드 확인
             if let Err(err) = windows::Win32::Foundation::GetLastError() {
                 let error_code = err.code().0 as u32;
                 if error_code == ERROR_ALREADY_EXISTS {

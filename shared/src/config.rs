@@ -16,10 +16,10 @@ pub struct Macro {
     pub trigger: String,
     pub actions: Vec<MacroAction>,
     #[serde(default)]
-    pub mode: u8, // 0=비활성, 1=연속, 2=단일
+    pub mode: u8,
 }
 
-#[derive(Debug, Default, Serialize, Deserialize)]
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct MacroConfig {
     pub macros: Vec<Macro>,
     #[serde(default = "default_toggle_key")]

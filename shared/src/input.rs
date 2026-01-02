@@ -34,7 +34,7 @@ impl InputSystem {
             flags |= KEYEVENTF_KEYUP;
         }
         
-        let mut input = INPUT {
+        let input = INPUT {
             r#type: INPUT_KEYBOARD,
             Anonymous: INPUT_0 {
                 ki: KEYBDINPUT {
@@ -47,7 +47,9 @@ impl InputSystem {
             },
         };
         
-        SendInput(&mut [input], mem::size_of::<INPUT>() as i32);
+        unsafe {
+            SendInput(&[input], mem::size_of::<INPUT>() as i32);
+        }
     }
     
     #[inline(always)]
@@ -63,7 +65,7 @@ impl InputSystem {
     pub fn tap_key(key: &str, hold_ms: u64) {
         if Self::press_key(key) {
             if hold_ms > 0 {
-                spin_sleep::sleep(std::time::Duration::from_micros(hold_ms * 1000));
+                spin_sleep::sleep(std::time::Duration::from_millis(hold_ms));
             }
             Self::release_key(key);
         }

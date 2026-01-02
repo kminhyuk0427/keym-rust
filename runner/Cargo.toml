@@ -1,0 +1,13 @@
+[package]
+name = "keym-runner"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "keym"
+path = "src/main.rs"
+
+[dependencies]
+shared = { path = "../shared" }
+windows.workspace = true
+spin_sleep.workspace = true

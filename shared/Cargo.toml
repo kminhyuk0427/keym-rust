@@ -1,0 +1,12 @@
+[package]
+name = "shared"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+windows.workspace = true
+serde.workspace = true
+toml.workspace = true
+lazy_static.workspace = true
+parking_lot.workspace = true
+spin_sleep.workspace = true

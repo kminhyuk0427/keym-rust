@@ -141,7 +141,7 @@ impl ScancodeMap {
     }
 }
 
-// 전역 싱글톤 (한 번만 생성)
+// 전역 싱글톤
 lazy_static::lazy_static! {
     pub static ref SCANCODE: ScancodeMap = ScancodeMap::new();
 }

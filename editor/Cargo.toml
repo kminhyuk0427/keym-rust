@@ -1,13 +1,17 @@
 [package]
 name = "keym-editor"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 
-[[bin]]
-name = "keym-editor"
-path = "src/main.rs"
+[build-dependencies]
+tauri-build = { version = "1.5", features = [] }
 
 [dependencies]
 shared = { path = "../shared" }
-native-windows-gui.workspace = true
-native-windows-derive.workspace = true
+tauri.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]

@@ -1,0 +1,36 @@
+{
+  "build": {
+    "beforeBuildCommand": "",
+    "beforeDevCommand": "",
+    "devPath": "../ui",
+    "distDir": "../ui",
+    "withGlobalTauri": false
+  },
+  "package": {
+    "productName": "KeyM Editor",
+    "version": "0.2.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false
+    },
+    "bundle": {
+      "active": true,
+      "identifier": "com.keym.editor",
+      "targets": "all"
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "height": 750,
+        "resizable": true,
+        "title": "KeyM Editor v0.2",
+        "width": 1200,
+        "center": true
+      }
+    ]
+  }
+}
